@@ -4,7 +4,7 @@ cluster.name: monitoring
 #node.name: "node1"
 
 node.master: true
-discovery.zen.minimum_master_nodes: 3
+discovery.zen.minimum_master_nodes: 1
 node.data: true
 
 http.max_content_length: 1000mb
@@ -13,7 +13,7 @@ cluster.routing.allocation.node_initial_primaries_recoveries: 250
 cluster.routing.allocation.node_concurrent_recoveries: 250
 
 recover_after_time: 5m
-gateway.expected_nodes: 3
+gateway.expected_nodes: 1
 
 index.refresh: 60s
 
