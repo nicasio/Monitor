@@ -1,0 +1,34 @@
+################################### Cluster ###################################
+cluster.name: monitoring
+
+#node.name: "node1"
+
+node.master: true
+discovery.zen.minimum_master_nodes: 3
+node.data: true
+
+http.max_content_length: 1000mb
+
+cluster.routing.allocation.node_initial_primaries_recoveries: 25
+cluster.routing.allocation.node_concurrent_recoveries: 25
+cluster.routing.allocation.enable: new_primaries
+
+recover_after_time: 5m
+gateway.expected_nodes: 3
+
+index.refresh: 60s
+
+discovery.zen.ping.unicast.hosts: ["54.191.0.157"]
+
+script.disable_dynamic: true
+
+indices.cache.filter.size: 20%
+index.cache.field.expire: 60m
+index.fielddata.cache: soft
+indices.fielddata.cache.size: 50%
+indices.fielddata.cache.expire : 60m
+
+threadpool:
+    bulk:
+        type: fixed
+        size: 500
