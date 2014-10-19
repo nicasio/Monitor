@@ -9,9 +9,8 @@ node.data: true
 
 http.max_content_length: 1000mb
 
-cluster.routing.allocation.node_initial_primaries_recoveries: 25
-cluster.routing.allocation.node_concurrent_recoveries: 25
-cluster.routing.allocation.enable: new_primaries
+cluster.routing.allocation.node_initial_primaries_recoveries: 250
+cluster.routing.allocation.node_concurrent_recoveries: 250
 
 recover_after_time: 5m
 gateway.expected_nodes: 3
