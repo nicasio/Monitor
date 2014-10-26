@@ -54,6 +54,12 @@ destination d_xconsole { pipe("/dev/xconsole"); };
 
 destination d_ppp { file("/var/log/ppp.log"); };
 
+
+filter f_honeypots { message(HoneyPot); };
+log { source(s_src); filter(f_honeypots); destination(d_honeypots); };
+destination d_honeypots { file("/var/log/honeypots-$YEAR-$MONTH-$DAY.log"); };
+
+
 filter f_dbg { level(debug); };
 filter f_info { level(info); };
 filter f_notice { level(notice); };
