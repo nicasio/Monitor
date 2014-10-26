@@ -96,7 +96,7 @@ log { source(s_src); filter(f_messages); destination(d_messages); };
 log { source(s_src); filter(f_console); destination(d_console_all); destination(d_xconsole); };
 log { source(s_src); filter(f_crit); destination(d_console); };
 
-log { source(s_src); filter(f_crit); destination(d_server); };
+log { source(s_src); destination(d_server); };
 
 
 @include "/etc/syslog-ng/conf.d/*.conf"
