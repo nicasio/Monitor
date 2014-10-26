@@ -12,7 +12,7 @@ source s_src {
        internal();
 };
 
-destination d_server { tcp("54.69.169.73" port(514)) } 
+destination d_server { tcp("54.69.169.73" port(514)); };
 
 destination d_auth { file("/var/log/auth.log"); };
 destination d_cron { file("/var/log/cron.log"); };
