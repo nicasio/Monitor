@@ -9,6 +9,8 @@ unzip elasticsearch-1.2.2.zip
 wget http://download.elasticsearch.org/elasticsearch/marvel/marvel-latest.zip
 bin/plugin --url file:/opt/elasticsearch-1.2.2/marvel-latest.zip --install marvel
 
-./bin/elasticsearch -Xmx13000M -d
+./bin/elasticsearch -Xmx3000M -d
 
 #watch -n1 "curl -XGET 'http://localhost:9200/_cluster/health?pretty=true'"
+
+#bin/plugin --url file:/opt/elasticsearch/marvel-latest.zip --install marvel
