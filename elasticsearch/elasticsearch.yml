@@ -9,24 +9,14 @@ node.data: true
 
 http.max_content_length: 1000mb
 
-cluster.routing.allocation.node_initial_primaries_recoveries: 250
-cluster.routing.allocation.node_concurrent_recoveries: 250
-
-recover_after_time: 5m
+recover_after_time: 1m
 gateway.expected_nodes: 1
 
-index.refresh: 60s
+index.refresh: 1s
 
 discovery.zen.ping.unicast.hosts: ["54.187.68.209"]
 
 script.disable_dynamic: true
-
-indices.cache.filter.size: 20%
-index.cache.field.expire: 60m
-index.fielddata.cache: soft
-indices.fielddata.cache.size: 50%
-indices.fielddata.cache.expire : 60m
-
 threadpool:
     bulk:
         type: fixed
