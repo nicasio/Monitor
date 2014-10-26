@@ -17,7 +17,7 @@ gateway.expected_nodes: 1
 
 index.refresh: 60s
 
-discovery.zen.ping.unicast.hosts: ["54.191.0.157"]
+discovery.zen.ping.unicast.hosts: ["54.187.68.209"]
 
 script.disable_dynamic: true
 
