@@ -14,3 +14,7 @@ bin/plugin --url file:/opt/elasticsearch-1.2.2/marvel-latest.zip --install marve
 #watch -n1 "curl -XGET 'http://localhost:9200/_cluster/health?pretty=true'"
 
 #bin/plugin --url file:/opt/elasticsearch/marvel-latest.zip --install marvel
+#curl -XDELETE 'http://localhost:9200/*'
+#curl -XPOST 'http://localhost:9200/_shutdown'
+
+
