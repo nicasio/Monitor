@@ -11,6 +11,7 @@ http.max_content_length: 1000mb
 
 recover_after_time: 1m
 gateway.expected_nodes: 1
+index.number_of_replicas: 0
 
 index.refresh: 1s
 
