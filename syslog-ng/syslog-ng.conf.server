@@ -4,7 +4,7 @@
 
 options { chain_hostnames(off); flush_lines(0); use_dns(no); use_fqdn(no);
 	  owner("root"); group("adm"); perm(0640); stats_freq(0);
-	  bad_hostname("^gconfd$");
+	  bad_hostname("^gconfd$");create_dirs (yes);
 };
 
 source s_src {
@@ -37,6 +37,16 @@ destination d_honeypots { file("/var/log/honeypots-$YEAR-$MONTH-$DAY.log"); };
 filter f_commands { message(CheckCommands); };
 log { source(s_src); filter(f_commands); destination(d_commands); };
 destination d_commands { file("/var/log/commands-$YEAR-$MONTH-$DAY.log"); };
+
+filter f_mysqlplugin { host(54.200.106.239); };
+log { source(s_src); filter(f_mysqlplugin); destination(d_mysqlplugin); };
+destination d_mysqlplugin { file("/var/log/mysqlplugin-$YEAR-$MONTH-$DAY.log"); };
+
+filter f_mysqlsniffer { host(54.191.244.150); };
+log { source(s_src); filter(f_mysqlsniffer); destination(d_mysqlsniffer); };
+destination d_mysqlsniffer { file("/var/log/mysqlsniffer-$YEAR-$MONTH-$DAY.log"); };
+
+
 
 
 filter f_dbg { level(debug); };
@@ -76,3 +86,4 @@ log { source(s_src); filter(f_cron); destination(d_cron); };
 log { source(s_src); filter(f_messages); destination(d_messages); };
 
 @include "/etc/syslog-ng/conf.d/*.conf"
+
