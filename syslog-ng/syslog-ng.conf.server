@@ -46,6 +46,9 @@ filter f_mysqlsniffer { host(54.191.244.150); };
 log { source(s_src); filter(f_mysqlsniffer); destination(d_mysqlsniffer); };
 destination d_mysqlsniffer { file("/var/log/mysqlsniffer-$YEAR-$MONTH-$DAY.log"); };
 
+filter f_mongo { host(54.68.230.224); };
+log { source(s_src); filter(f_mongo); destination(d_mongo); };
+destination d_mongo { file("/var/log/mongo-$YEAR-$MONTH-$DAY.log"); };
 
 
 
