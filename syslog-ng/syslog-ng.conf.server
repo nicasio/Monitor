@@ -19,8 +19,8 @@ source s_sys {
   #file ("/proc/kmsg" log_prefix("kernel: "));
   unix-stream ("/dev/log");
   internal();
-  udp(ip(0.0.0.0) port(514) tags("oficinas") );
-        tcp(ip(0.0.0.0) port(514) tags("oficinas") ); 
+  udp(ip(0.0.0.0) port(514)  );
+        tcp(ip(0.0.0.0) port(514) ); 
 };
 
 destination d_auth { file("/var/log/auth.log"); };
