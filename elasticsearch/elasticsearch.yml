@@ -18,7 +18,3 @@ index.refresh: 1s
 discovery.zen.ping.unicast.hosts: ["54.187.68.209"]
 
 script.disable_dynamic: true
-threadpool:
-    bulk:
-        type: fixed
-        size: 500
